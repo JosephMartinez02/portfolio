@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Evangelion Page";
+}
+
+<div class="text-center evaname">
+    <h1 class="display-4">List of Evangelion</h1>
+</div>
+
+<div class="maincontent">
+    @{
+        var firstSort = "first_asc";
+        if (Model.CurrentSort == "first_asc")
+        {
+            firstSort = "first_desc";
+        }
+    }
+    <a asp-page="./Index" asp-route-CurrentSort="@firstSort"><p class="btn-sort">Sort by Ascending/Decending</p></a>
+    @foreach (var item in Model.Evangelion)
+    {
+        <div class="innercontent">
+            <h3 class="evaname">@item.EVAName</h3>
+            <p class="description">@item.Description</p>
+            <p>Source: <a href="https://evangelion.fandom.com/">https://evangelion.fandom.com/</a></p>
+            <img class="evaimg" src="~/img/EVA/@item.Picture" />
+            @foreach (var pilot in item.PilotEvangelions)
+            {
+                <img src="~/img/Pilots/@pilot.Pilot.Picture" class="pilotimg" />
+                <p class="name">@pilot.Pilot.FirstName @pilot.Pilot.LastName</p>
+            }
+        </div>
+    }
+</div>
+<hr/>
+@{
+    var prevDisabled="";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }    
+}
+<nav aria-label="">
+    <ul class="pagination">
+        <li class="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li class="page-item"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    </ul>
+</nav>

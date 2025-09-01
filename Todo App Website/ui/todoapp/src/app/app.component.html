@@ -1,0 +1,24 @@
+<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
+
+<body>
+  <div id="leftline">
+  </div>
+  <h2 id="title">Todo App</h2>
+  <div id="textbox">
+    <input id="newNotes">
+    <button (click)="addNotes()" id="button">Add Note</button>
+  </div>
+  <h2> @for (note of notes; track note.description){
+    <li id="note">{{ note.description }}</li>
+    <button id="deletebutton" (click)="deleteNotes(note.id)">Delete Note</button>
+    } @empty {
+    <li id="note">No Notes.</li>
+    }
+  </h2>
+</body>
+
+
+</html>

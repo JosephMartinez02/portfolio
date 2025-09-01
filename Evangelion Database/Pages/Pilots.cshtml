@@ -1,0 +1,26 @@
+@page
+@model PilotModel
+@{
+    ViewData["Title"] = "Pilot's Page";
+}
+
+<div class="text-center evaname">
+    <h1 class="display-4">List of Pilots</h1>
+</div>
+
+<div class="maincontent">
+    @foreach (var item in Model.Pilot)
+    {
+        <div class="innercontent">
+            <h3 class="evaname">@item.FirstName @item.LastName</h3>
+            <p class="description">@item.Description</p>
+            <p>Source: <a href="https://evangelion.fandom.com/">https://evangelion.fandom.com/</a></p>
+            <img class="evaimg" src="~/img/Pilots/@item.Picture" />
+            @foreach (var eva in item.PilotEvangelions)
+            {
+                <img src="~/img/EVA/@eva.Evangelion.Picture" class="pilotimg" />
+                <p class="name">@eva.Evangelion.EVAName</p>
+            }
+        </div>
+    }
+</div>

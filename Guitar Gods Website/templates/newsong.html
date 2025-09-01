@@ -1,0 +1,22 @@
+{% extends "adminbase.html" %}
+{% block main %}
+<h1>Make a New Song Entry</h1>
+<h3>{{errormsg}}</h3>
+<div class="container">
+        <form action="/newsong" method="POST">
+                <label>Artist Name:</label>
+                <input type="text" name="name" />
+                <label>Song Name:</label>
+                <input type="text" name="songName" />
+                <label>Song Link:</label>
+                <input type="text" name="songLink" />
+                <input type="submit" value="Submit" />
+        </form>
+        <hr>
+        <ul>
+                {% for song in songinfo %}
+                <li>{{song}}</li>
+                {% endfor %}
+        </ul>
+</div>
+{% endblock %}

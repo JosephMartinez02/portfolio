@@ -1,0 +1,17 @@
+{% extends "adminbase.html" %}
+{% block main %}
+<table class="admintable">
+      <tr>
+            <th>Artist Name</th>
+            <th>Song Name</th>
+            <th>Song Link</th>
+      </tr>
+      {% for info in songinfo %}
+      <tr>
+            <td>{{info[0]}}</td>
+            <td>{{info[1]}}</td>
+            <td>{{info[2]}}</td>
+      </tr>
+      {% endfor %}
+</table>
+{% endblock %}

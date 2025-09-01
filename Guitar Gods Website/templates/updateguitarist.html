@@ -1,0 +1,23 @@
+{% extends "adminbase.html" %}
+{% block main %}
+<h1>Update a Guitarist Entry</h1>
+<h3>{{errormsg}}</h3>
+<div class="container">
+<form action="/updateguitarist" method="POST">
+    <label>Search for Guitarist:</label>
+    <input type="text" name="name" />
+    <input type="submit" name="btnID" value="Search" />
+</form>
+<form action="/updateguitarist" method="POST">
+    <label>Guitarist:</label>
+    <input class="readonly" type="text" name="guitarist" value="{{name}}" readonly />
+    <label>Description:</label>
+    <input type="text" name="description" value="{{description}}" />
+    <label>Picture:</label>
+    <input type="text" name="picture" value="{{picture}}" />
+    <label>Link:</label>
+    <input type="text" name="link" value="{{link}}" />
+    <input type="submit" name="btnID" value="Update" />
+</form>
+</div>
+{% endblock %}

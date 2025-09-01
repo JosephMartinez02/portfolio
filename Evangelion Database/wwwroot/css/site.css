@@ -1,0 +1,98 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-image: url("../img/Warning.jpg");
+  background-repeat: repeat;
+}
+@font-face {
+  font-family: "Matisse Pro EB";
+  src: url("../fonts/Matisse Pro EB.otf");
+}
+*{
+  font-family: "Matisse Pro EB";
+}
+.evaimg {
+  max-width: 65%;
+  max-height: 65%;
+  border: #000000;
+  border-style: solid;
+  border-width: 6px;
+  float: left;
+  padding: 10px;
+  flex-basis: 30%;
+}
+.pilotimg {
+  max-width: auto;
+  max-height: 200px;
+  height: 400px;
+  float: right;
+}
+.maincontent {
+  background-color: #d3290f;
+  padding: 25px 50px 25px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: #000000;
+  border-style: double;
+  border-width: thick;
+}
+.description {
+  float: right;
+}
+.name{
+  float: right;
+  padding: 10px;
+  margin: 10px;
+  border-style: outset;
+  border-width: thick;
+  text-align: center;
+}
+.innercontent{
+  height: 900px;
+  width: auto;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: visible;
+  color: #000000;
+  background-color: white;
+  border: #000000;
+  border-style: double;
+  border-width: thick;
+}
+.evaname{
+  font-weight: bold;
+  color: #965fd4;
+  background-color: #d3290f;
+  padding: 1em;
+  text-align: center;
+  border-style: double;
+  border-width: thick;
+}
+.btn-sort{
+  padding: 10px;
+  margin: 10px;
+  border-style: outset;
+  border-width: thick;
+  text-align: center;
+}
