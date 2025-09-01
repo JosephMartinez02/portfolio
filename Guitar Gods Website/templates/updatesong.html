@@ -1,0 +1,21 @@
+{% extends "adminbase.html" %}
+{% block main %}
+<h1>Update a Song Entry</h1>
+<h3>{{errormsg}}</h3>
+<div class="container">
+<form action="/updatesong" method="POST">
+    <label>Search for Song:</label>
+    <input type="text" name="name" />
+    <input type="submit" name="btnID" value="Search" />
+</form>
+<form action="/updatesong" method="POST">
+    <label>Song Name:</label>
+    <input class="readonly" type="text" name="songName" value="{{songName}}" readonly />
+    <label>Artist Name:</label>
+    <input type="text" name="artistName" value="{{artistName}}" />
+    <label>Song Link:</label>
+    <input type="text" name="songLink" value="{{songLink}}" />
+    <input type="submit" name="btnID" value="Update" />
+</form>
+</div>
+{% endblock %}
