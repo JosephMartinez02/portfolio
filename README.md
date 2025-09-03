@@ -1,4 +1,5 @@
 # Portfolio
+This portfolio contains different applications of programming and web development.
 ## Websites
 ### Guitar Gods Website
 The Guitar Gods Website is a small 3 page website that loads data from a database using SQLite and loops through data to show you different guitarists using JavaScript.
